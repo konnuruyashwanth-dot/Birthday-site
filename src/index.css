@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  /* Pink "love" palette — same roles as the portfolio's brand-* tokens */
+  --color-brand-accent: #e0729a;   /* rose — the accent (was gold) */
+  --color-brand-dark:   #3d1f2d;   /* deep plum ink (was near-black) */
+  --color-brand-medium: #8a4a63;   /* muted wine (was brown) */
+  --color-brand-light:  #fdf1f4;   /* blush cream page bg (was warm cream) */
+  --color-brand-hover:  #f3a9c3;   /* soft pink hover */
+  --color-brand-rose:   #f7a8c4;
+  --color-brand-deep:   #7a2f50;   /* wine for dark sections */
+  --color-brand-plum:   #2a1220;   /* near-black plum for preloader/footer */
+  --color-brand-gold:   #d9a441;   /* small warm sparkle accent */
+
+  --font-sans:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-script:  "Caveat", ui-serif, cursive;
+  --font-love:    "Parisienne", cursive;
+
+  --animate-float: float 6s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdf1f4;
+  color: #3d1f2d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* AOS-style drop bounce (kept from portfolio) */
+[data-aos="drop-bounce"] { opacity: 0; }
+[data-aos="drop-bounce"].aos-animate {
+  animation: dropBounce 1.2s cubic-bezier(0.28, 0.84, 0.42, 1) forwards;
+}
+@keyframes dropBounce {
+  0% { transform: translateY(-300px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  65% { transform: translateY(-40px); opacity: 1; }
+  80% { transform: translateY(0); opacity: 1; }
+  90% { transform: translateY(-15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* marquee (kept) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
+
+::selection { background: var(--color-brand-accent); color: #fff; }
+
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+
+/* Grain overlay (same as portfolio) */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* gentle twinkle for the star map */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: translateY(0) scale(1) rotate(-2deg); opacity: 0.92; }
+  50%      { transform: translateY(-2px) scale(1.1) rotate(2deg); opacity: 1; }
+}
+@keyframes smokeRise {
+  0%   { opacity: 0.5; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-26px) scale(1.7); }
+}
+
+@keyframes recBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+@keyframes scanMove { 0% { transform: translateY(-12%); } 100% { transform: translateY(1200%); } }
+@keyframes vhsFlicker { 0%, 100% { opacity: 0.05; } 45% { opacity: 0.09; } 70% { opacity: 0.03; } }
+
+@keyframes shootStar {
+  0% { transform: translate3d(0,0,0) rotate(18deg); opacity: 0; }
+  8% { opacity: 1; }
+  42% { transform: translate3d(118vw, 46vh, 0) rotate(18deg); opacity: 0; }
+  100% { opacity: 0; }
+}
+.const-shoot {
+  position: absolute; height: 2px; width: 2px; border-radius: 9999px;
+  background: #fff; box-shadow: 0 0 8px 3px rgba(255,255,255,0.85);
+  animation: shootStar 9s linear infinite;
+}
+.const-shoot::after {
+  content: ''; position: absolute; right: 2px; top: 50%; width: 92px; height: 1px;
+  transform: translateY(-50%); background: linear-gradient(90deg, rgba(255,255,255,0.85), transparent);
+}
+
+@keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1.16); } }
+
+@keyframes bflap { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.34); } }
