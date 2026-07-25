@@ -29,7 +29,7 @@ function Screen() {
       <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-1.5 font-mono text-[11px] text-white/85">
         <span className="h-2.5 w-2.5 rounded-full bg-red-500" style={{ animation: 'recBlink 1.2s infinite' }} />REC
       </div>
-      <div className="pointer-events-none absolute bottom-3 right-3 font-mono text-[11px] text-white/70">’24 — ’25</div>
+      <div className="pointer-events-none absolute bottom-3 right-3 font-mono text-[11px] text-white/70">’25 — ’26</div>
     </div>
   )
 }

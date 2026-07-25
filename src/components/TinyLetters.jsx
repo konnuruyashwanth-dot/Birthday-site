@@ -21,7 +21,7 @@ const raw = [
   'Open me on a good morning: good morning, most beautiful person alive.',
   'Open me when you’re far away: distance is just a number I refuse to respect.',
   'Open me when you’re unsure of us: I’m not going anywhere. This is home.',
-  'Open me when you want to feel spoiled: you, entirely, exactly as you are — perfect.',
+  'Open me when you feel ugly: you, entirely, exactly as you are — perfect.',
   'Open me when you’re overwhelmed: put it down. Come here. Just be.',
   'Open me when you need courage: you’ve survived every hard day so far. All of them.',
   'Open me on our anniversary: I’d choose you again. And again. And again.',
